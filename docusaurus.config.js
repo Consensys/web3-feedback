@@ -30,6 +30,7 @@ const config = {
   // Add customFields to expose environment variables
   customFields: {
     dynamicEnvironmentId: process.env.DYNAMIC_ENVIRONMENT_ID,
+    lineaScanApiKey: process.env.LINEA_SCAN_API_KEY,
   },
 
   // GitHub pages deployment config.

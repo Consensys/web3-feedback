@@ -53,6 +53,13 @@ nav[aria-label="Breadcrumbs"] {
   gap: 1.5rem;
 }
 
+.feedbackButtonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .feedbackButton {
   background: var(--page-background);
   border: 1px solid var(--ifm-color-emphasis-300);
@@ -66,6 +73,59 @@ nav[aria-label="Breadcrumbs"] {
   transition: all 0.2s ease;
   font-size: 1.4rem;
   color: var(--ifm-font-color-base);
+}
+
+.countButton {
+  background: var(--ifm-color-emphasis-200);
+  border: none;
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin-left: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.countButton.loading {
+  animation: pulse 1.5s infinite;
+  background: var(--ifm-color-emphasis-300);
+  cursor: wait;
+}
+
+.countButton.retrying {
+  animation: pulseRed 1.5s infinite;
+  background: var(--ifm-color-danger-lightest);
+  cursor: wait;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulseRed {
+  0% { 
+    opacity: 1;
+    background: var(--ifm-color-danger-lightest);
+  }
+  50% { 
+    opacity: 0.7;
+    background: var(--ifm-color-danger-lighter);
+  }
+  100% { 
+    opacity: 1;
+    background: var(--ifm-color-danger-lightest);
+  }
+}
+
+.countButton:hover {
+  background-color: var(--ifm-color-emphasis-200);
 }
 
 .feedbackButton:hover {
@@ -106,7 +166,179 @@ nav[aria-label="Breadcrumbs"] {
   font-size: 0.9rem;
 }
 
-@keyframes fade-in {
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: var(--ifm-background-color);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modalHeader {
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--ifm-color-emphasis-600);
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.closeButton:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.modalBody {
+  padding: 1rem;
+  overflow-y: auto;
+  max-height: calc(80vh - 4rem);
+}
+
+.transactionItem {
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.transactionItem:last-child {
+  margin-bottom: 0;
+}
+
+.txLink {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.txLink:hover {
+  text-decoration: underline;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: var(--ifm-background-color);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modalHeader {
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--ifm-color-emphasis-600);
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.closeButton:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.modalBody {
+  padding: 1rem;
+  overflow-y: auto;
+  max-height: calc(80vh - 4rem);
+}
+
+.transactionItem {
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.transactionItem:last-child {
+  margin-bottom: 0;
+}
+
+.txLink {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.txLink:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
@@ -130,4 +362,34 @@ html[data-theme='light'] .feedbackButton {
   background-color: #f8f7f2;
   border-color: var(--ifm-color-emphasis-300);
   color: var(--ifm-font-color-base);
+}
+
+html[data-theme='dark'] .modalContent {
+  background-color: var(--ifm-background-color);
+}
+
+html[data-theme='dark'] .transactionItem {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.retryBanner {
+  background: var(--ifm-color-danger-lightest);
+  color: var(--ifm-color-danger-darkest);
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
