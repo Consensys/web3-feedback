@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkweb3_feedback=self.webpackChunkweb3_feedback||[]).push([[890],{10890:(e,c,a)=>{a.d(c,{createInfoServices:()=>b.v});var b=a(97021);a(19369)}}]);
