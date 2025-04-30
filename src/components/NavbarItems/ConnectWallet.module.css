@@ -4,33 +4,44 @@
 }
 
 .connectButton {
-  background-color: #f6851b;
-  color: #000;
+  background: #3b82f6;
+  color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 24px;
   padding: 8px 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
 }
 
 .connectButton:hover {
-  background-color: #e2761b;
+  background: #2563eb;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .walletButton {
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 6px 12px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 6px 14px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: background-color 0.2s;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+  font-size: 14px;
 }
 
 .walletButton:hover {
-  background-color: #eee;
+  background: #2563eb;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .walletAddress {
@@ -42,26 +53,28 @@
   position: absolute;
   top: 100%;
   right: 0;
-  margin-top: 4px;
+  margin-top: 8px;
   background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   z-index: 1000;
-  min-width: 220px;
+  min-width: 240px;
+  overflow: hidden;
 }
 
 .dropdownItem {
-  padding: 12px;
+  padding: 14px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .accountLabel {
   font-size: 14px;
   font-weight: 500;
+  color: #333;
 }
 
 .copyButton {
@@ -69,43 +82,167 @@
   border: none;
   cursor: pointer;
   font-size: 16px;
-  padding: 4px;
-  color: #666;
+  padding: 4px 8px;
+  color: #8247e5;
+  border-radius: 6px;
+  transition: background-color 0.2s;
 }
 
 .copyButton:hover {
-  color: #333;
+  background-color: #f5f0ff;
 }
 
 .disconnectButton {
   width: 100%;
   text-align: left;
-  padding: 12px;
+  padding: 14px 16px;
   background: none;
   border: none;
   cursor: pointer;
-  color: #e45f35;
+  color: #f43f5e;
   font-weight: 500;
+  transition: background-color 0.2s;
 }
 
 .disconnectButton:hover {
-  background-color: #f9f9f9;
+  background-color: #fff1f2;
 }
 
-html[data-theme="dark"] .walletButton {
-  background-color: #333;
-  border-color: #444;
-}
-
+/* Dark theme styles */
 html[data-theme="dark"] .dropdown {
-  background-color: #222;
-  border-color: #444;
+  background-color: #1a1a1a;
+  border: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 html[data-theme="dark"] .dropdownItem {
-  border-color: #333;
+  border-color: #2c2c2c;
+}
+
+html[data-theme="dark"] .accountLabel {
+  color: #e0e0e0;
+}
+
+html[data-theme="dark"] .copyButton {
+  color: #a78bfa;
+}
+
+html[data-theme="dark"] .copyButton:hover {
+  background-color: #2d2a3c;
 }
 
 html[data-theme="dark"] .disconnectButton:hover {
-  background-color: #2a2a2a;
+  background-color: #331a1e;
+}
+
+html[data-theme="dark"] .walletButton {
+  background: #3b82f6;
+  color: white;
+  border: none;
+}
+
+/* Medium viewports (tablets) */
+@media (max-width: 1080px) and (min-width: 997px) {
+  .walletContainer {
+    margin-right: 14px;
+  }
+  
+  .connectButton, 
+  .walletButton {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+/* For smaller viewports to avoid clash with search */
+@media (max-width: 1080px) {
+  .walletContainer {
+    margin-right: 15px;
+  }
+}
+
+/* Small viewports (mobile) */
+@media (max-width: 996px) {
+  /* Force hide the button in the navbar on mobile */
+  .walletContainer {
+    display: none !important;
+  }
+}
+
+/* Mobile sidebar styles (added directly to the HTML element for specificity) */
+.navbar-sidebar .walletContainer {
+  display: block !important;
+  width: 100%;
+  margin: 12px 0;
+  padding: 0 16px;
+}
+
+.navbar-sidebar .connectButton,
+.navbar-sidebar .walletButton {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  background: transparent;
+  color: var(--linea-sidebar-text-color);
+  box-shadow: none;
+  border: none;
+}
+
+.navbar-sidebar .connectButton:hover,
+.navbar-sidebar .walletButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .navbar-sidebar .connectButton,
+html[data-theme="dark"] .navbar-sidebar .walletButton {
+  background: transparent;
+  color: var(--linea-sidebar-text-color);
+}
+
+html[data-theme="dark"] .navbar-sidebar .connectButton:hover,
+html[data-theme="dark"] .navbar-sidebar .walletButton:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Adjust dropdown in mobile sidebar */
+.navbar-sidebar .dropdown {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+}
+
+.navbar-sidebar .dropdownItem {
+  background-color: transparent;
+  padding: 12px 16px;
+}
+
+.navbar-sidebar .accountLabel {
+  color: var(--linea-sidebar-text-color);
+}
+
+.navbar-sidebar .copyButton {
+  color: var(--linea-sidebar-text-color);
+  opacity: 0.7;
+}
+
+.navbar-sidebar .copyButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.navbar-sidebar .disconnectButton {
+  color: #f43f5e;
+}
+
+html[data-theme="dark"] .navbar-sidebar .dropdown {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .navbar-sidebar .copyButton:hover {
+  background-color: rgba(255, 255, 255, 0.05);
 }
