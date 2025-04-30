@@ -12,7 +12,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 2px 8px rgb(59 130 246 / 20%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,7 @@
 
 .connectButton:hover {
   background: #2563eb;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgb(59 130 246 / 30%);
 }
 
 .walletButton {
@@ -35,13 +35,13 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 2px 8px rgb(59 130 246 / 20%);
   font-size: 14px;
 }
 
 .walletButton:hover {
   background: #2563eb;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgb(59 130 246 / 30%);
 }
 
 .walletAddress {
@@ -57,7 +57,7 @@
   background-color: white;
   border: none;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
   z-index: 1000;
   min-width: 240px;
   overflow: hidden;
@@ -112,7 +112,7 @@
 html[data-theme="dark"] .dropdown {
   background-color: #1a1a1a;
   border: none;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
 }
 
 html[data-theme="dark"] .dropdownItem {
@@ -185,7 +185,7 @@ html[data-theme="dark"] .walletButton {
   
   :global(.navbar-sidebar) .connectButton:hover,
   :global(.navbar-sidebar) .walletButton:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgb(0 0 0 / 5%);
     box-shadow: none;
   }
   
@@ -197,7 +197,7 @@ html[data-theme="dark"] .walletButton {
   
   html[data-theme="dark"] :global(.navbar-sidebar) .connectButton:hover,
   html[data-theme="dark"] :global(.navbar-sidebar) .walletButton:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgb(255 255 255 / 5%);
   }
   
   :global(.navbar-sidebar) .dropdown {
@@ -205,7 +205,7 @@ html[data-theme="dark"] .walletButton {
     width: 100%;
     margin-top: 10px;
     box-shadow: none;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(0 0 0 / 10%);
     background-color: transparent;
   }
   
@@ -224,7 +224,7 @@ html[data-theme="dark"] .walletButton {
   }
   
   :global(.navbar-sidebar) .copyButton:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgb(0 0 0 / 5%);
   }
   
   :global(.navbar-sidebar) .disconnectButton {
@@ -232,10 +232,10 @@ html[data-theme="dark"] .walletButton {
   }
   
   html[data-theme="dark"] :global(.navbar-sidebar) .dropdown {
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgb(255 255 255 / 10%);
   }
   
   html[data-theme="dark"] :global(.navbar-sidebar) .copyButton:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgb(255 255 255 / 5%);
   }
 }
