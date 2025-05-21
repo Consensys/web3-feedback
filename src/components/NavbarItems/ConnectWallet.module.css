@@ -135,6 +135,18 @@
   transition: fill 0.2s ease;
 }
 
+.metaMaskLogo {
+  display: inline-flex;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+}
+
+.metaMaskLogo svg {
+  width: 100%;
+  height: 100%;
+}
+
 .copyButton:hover .copyIcon svg {
   fill: #333;
 }
@@ -165,18 +177,6 @@ html[data-theme="dark"] .dropdownItem {
 
 html[data-theme="dark"] .disconnectButton:hover {
   background-color: #2a2a2a;
-}
-
-.metaMaskLogo {
-  display: inline-flex;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-}
-
-.metaMaskLogo svg {
-  width: 100%;
-  height: 100%;
 }
 
 @media (max-width: 996px) {
