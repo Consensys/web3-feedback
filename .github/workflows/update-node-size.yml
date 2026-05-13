@@ -9,10 +9,10 @@ jobs:
   update-data:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
 
     - name: Use Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@7c12f8017d5436eb855f1ed4399f037a36fbd9e8 # v2.5.2
       with:
         node-version: '20.9.0'  # or whatever version you're using
 
@@ -34,7 +34,7 @@ jobs:
 
     - name: Create Pull Request
       if: steps.git-check.outcome == 'failure'
-      uses: peter-evans/create-pull-request@v3
+      uses: peter-evans/create-pull-request@18f7dc018cc2cd597073088f7c7591b9d1c02672 # v3.14.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update node size data
@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
+        uses: rtCamp/action-slack-notify@e31e87e03dd19038e411e38ae27cbad084a90661 # v2.3.3
         env:
           SLACK_CHANNEL: doc-ci-alerts
           SLACK_COLOR: danger
